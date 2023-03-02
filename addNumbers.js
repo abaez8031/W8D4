@@ -7,6 +7,7 @@ const reader = readline.createInterface({
 
 function addNumbers(sum, numsLeft, completionCallback) {
   if (numsLeft === 0) {
+    reader.close;
     completionCallback(sum);
   } else {
     reader.question("Please input a number", function (answer) {
