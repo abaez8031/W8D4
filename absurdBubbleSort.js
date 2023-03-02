@@ -24,3 +24,14 @@ function absurdBubbleSort(arr, sortCompletionCallback) {
     }
   }
 }
+
+function innerBubbleSortLoop(arr, i, madeAnySwaps, outerBubbleSortLoop) {
+  if (i < arr.length - 1) {
+    askIfGreaterThan(arr[i], arr[i + 1], function(isGreaterThan) {
+      if (isGreaterThan) {
+        [arr[i], arr[i + 1]] = [arr[i+ 1], arr[i]]
+      }
+    })
+    innerBubbleSortLoop()
+  }
+}
